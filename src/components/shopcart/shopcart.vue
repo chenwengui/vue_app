@@ -108,8 +108,8 @@
 </script>
 
 <style lang="scss" scoped>
-	.shopcart{position:fixed;left:0;bottom:0;z-index: 99;width:100%;height:48px;
-		.content{display: flex;background-color: #141d27;}
+	.shopcart{position:fixed;left:0;bottom:30px;z-index: 99;width:100%;height:48px;
+		.content{display: flex;background-color: #141d27;height:48px;}
 		.content_left{flex:1;font-size:0;
 			.logowrapper{display: inline-block;position: relative;top:-10px;margin:0 12px;padding:6px;box-sizing:border-box;width:56px;height:56px;border-radius:50%;background-color: #141d27;vertical-align: top;
 				.logo{width:100%;height:100%;border-radius: 50%;background-color: #2B343C;text-align: center;

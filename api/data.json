@@ -1,4 +1,116 @@
 {
+	"my":{
+		"title":"我的",
+		"user":{
+			"name":"3***5",
+			"phone":"158****9669",
+			"money":0.00,
+			"favorableNum":3,
+			"golds":20
+		},
+		"activities":[{
+			"iconClass":"icon-gift",
+			"iconColor":"#FF7753",
+			"name":"推荐有奖",
+			"desc":"5元现金拿不停"
+		},{
+			"iconClass":"icon-library",
+			"iconColor":"#97E34B",
+			"name":"金币商城",
+			"desc":"0元好物在这里"
+		},{
+			"iconClass":"icon-star-full",
+			"iconColor":"#FFAF56",
+			"name":"每日精选",
+			"desc":"全场包邮一元起"
+		},{
+			"iconClass":"icon-credit-card",
+			"iconColor":"#4CA5F5",
+			"name":"皮皮虾联名卡",
+			"desc":"免费领超级会员"
+		}]
+	},
+	"orders":{
+		"title":"订单",
+		"othersBuy":{
+			"title":"附近买过",
+			"orderList":[
+				{
+					"img":"http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/114/h/114",
+					"name":"红枣山药糙米粥",
+					"type":"decrease",
+					"desc":"组合套餐:满30减17，满50减26，满84减45",
+					"num":4
+				},{
+					"img":"http://fuss10.elemecdn.com/d/2d/b1eb45b305635d9dd04ddf157165fjpeg.jpeg?imageView2/1/w/114/h/114",
+					"name":"娃娃菜炖豆腐",
+					"type":"decrease",
+					"desc":"组合套餐:满30减23，满50减35",
+					"num":2
+				},{
+					"img":"http://fuss10.elemecdn.com/9/c6/f3bc84468820121112e79583c24efjpeg.jpeg?imageView2/1/w/114/h/114",
+					"name":"手撕包菜",
+					"type":"decrease",
+					"desc":"组合套餐:满30减23，满50减30，满70减35",
+					"num":5
+				},{
+					"img":"http://fuss10.elemecdn.com/4/e7/8277a6a2ea0a2e97710290499fc41jpeg.jpeg?imageView2/1/w/114/h/114",
+					"name":"香酥黄金鱼/3条",
+					"type":"decrease",
+					"desc":"组合套餐:满20减12，满30减23，满50减30，满84减45，满100减60，满120减75",
+					"num":8
+				},{
+					"img":"http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/114/h/114",
+					"name":"八宝酱菜",
+					"type":"decrease",
+					"desc":"组合套餐:满30减15，满50减24，满70减34",
+					"num":1
+				}
+			]
+		}
+	},
+	"discovery":{
+  	"title":"发现",
+  	"love":{
+  		"name":"美食热推",
+  		"type":"love",
+  		"desc":"你的口味，我都懂得",
+  		"foods":[{
+  			"name":"葱花饼",
+  			"img":"http://fuss10.elemecdn.com/f/28/a51e7b18751bcdf871648a23fd3b4jpeg.jpeg?imageView2/1/w/114/h/114",
+  			"price":10
+  		},{
+  			"name":"蜜瓜圣女萝莉杯",
+  			"img":"http://fuss10.elemecdn.com/b/5f/b3b04c259d5ec9fa52e1856ee50dajpeg.jpeg?imageView2/1/w/114/h/114",
+  			"price":6
+  		},{
+  			"name":"红豆薏米粥套餐",
+  			"img":"http://fuss10.elemecdn.com/f/49/27f26ed00c025b2200a9ccbb7e67ejpeg.jpeg?imageView2/1/w/114/h/114",
+  			"price":37
+  		}]
+  	},"discount":{
+  		"name":"天天特价",
+  		"type":"discount",
+  		"desc":"特价商品，一网打尽",
+  		"foods":[{
+  			"name":"红枣山药粥套餐",
+  			"img":"http://fuss10.elemecdn.com/6/72/cb844f0bb60c502c6d5c05e0bddf5jpeg.jpeg?imageView2/1/w/114/h/114",
+  			"price":29,
+  			"oldprice":36
+  		},{
+  			"name":"VC无限橙果汁",
+  			"img":"http://fuss10.elemecdn.com/e/c6/f348e811772016ae24e968238bcbfjpeg.jpeg?imageView2/1/w/114/h/114",
+  			"price":8,
+  			"oldprice":10
+  		},{
+  			"name":"扁豆焖面",
+  			"img":"http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114",
+  			"price":14,
+  			"oldprice":18
+  		}]
+  	}
+  },
+
   "seller": {
     "name": "皮皮虾香坊（智慧园）",
     "description": "蜂鸟专送",
@@ -42,9 +154,9 @@
       "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
     ],
     "infos": [
-      "该商家支持发票,请下单写好发票抬头",
+      "发票:该商家支持发票,请下单写好发票抬头",
       "品类:其他菜系,包子粥店",
-      "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
+      "商家地址:北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
       "营业时间:10:00-20:30"
     ]
   },
@@ -90,7 +202,7 @@
         {
           "name": "扁豆焖面",
           "price": 14,
-          "oldPrice": "",
+          "oldPrice": "18",
           "description": "",
           "sellCount": 188,
           "rating": 96,
@@ -1124,6 +1236,7 @@
       ]
     }
   ],
+
   "ratings": [
     {
       "username": "3******c",

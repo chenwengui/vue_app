@@ -1,71 +1,25 @@
 <template>
   <div id="app">
-   	<wg_header :owner="owner"></wg_header>
-   	<div class="wg_tab">
-   		<div class="tab_item">
-   			<router-link to="/goods">商品</router-link>
-   		</div>
-   		<div class="tab_item">
-   			<router-link to="/reviews">评价</router-link>
-   		</div>
-   		<div class="tab_item">
-   			<router-link to="/owner">商家</router-link>
-   		</div>
-   	</div>
-   	<router-view :owner="owner"></router-view>
+    <router-view></router-view>
+    <div class="tab_page">
+    	<router-link to="/goods">点菜</router-link>
+    	<router-link to="/discovery">发现</router-link>
+    	<router-link to="/orders">订单</router-link>
+    	<router-link to="/my">我的</router-link>
+    </div>
   </div>
 </template>
 
 <script>
-	import axios from 'axios';
-	import wg_header from './components/common/header/header.vue';
-	const RES_OK = 'OK';
-	export default{
-		data(){
-			return{
-				owner:{}
-			}		
-		},
-		components:{
-			wg_header
-		},
-		created(){
-			var self = this;
-			axios.get('/api/data.json').then(function(response){
-				if(response.statusText === RES_OK){
-					self.owner = response.data.seller;
-				}
-			})
-		}
-	}
+  export default {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	#app{
-		.wg_tab{display:flex;width:100%;height:40px;line-height:40px;position:relative;
-			&::after{content:'';position:absolute;left:0;bottom:0;width:100%;border-top:1px solid rgba(7,17,27,.1);}
-			.tab_item{flex:1;text-align:center;
-				a{display: block;font-size:14px;color:rgb(77,85,93);
-					&.active{color:rgb(240,20,20)}
-				}
+		.tab_page{position:fixed;z-index:9999;left:0;bottom:0;display: flex;width:100%;height:30px;line-height:30px;background-color:#141D27;
+			a{flex:1;text-align: center;color:#fff;font-size: 14px;
+				&.active{color:#00A0DC;}
 			}
 		}
-	}
-	@media (-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5){
-    .wg_tab{
-        &::after{
-            -webkit-transform: scaleY(0.7);
-            transform: scaleY(0.7);
-        }
-    }
-}
-
-	@media (-webkit-min-device-pixel-ratio:2),(min-device-pixel-ratio:2){
-    .wg_tab{
-        &::after{
-            -webkit-transform: scaleY(0.5);
-            transform: scaleY(0.5);
-        }
-    }
 	}
 </style>

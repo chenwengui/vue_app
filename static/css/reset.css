@@ -93,11 +93,11 @@ body {
 /*图标字体样式*/
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?zdcvz1');
-  src:  url('fonts/icomoon.eot?zdcvz1#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?zdcvz1') format('truetype'),
-    url('fonts/icomoon.woff?zdcvz1') format('woff'),
-    url('fonts/icomoon.svg?zdcvz1#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?tpcs7x');
+  src:  url('fonts/icomoon.eot?tpcs7x#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tpcs7x') format('truetype'),
+    url('fonts/icomoon.woff?tpcs7x') format('woff'),
+    url('fonts/icomoon.svg?tpcs7x#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -117,6 +117,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-favorite:before {
+  content: "\e90c";
+}
+.icon-keyboard_arrow_right:before {
+  content: "\e90d";
+}
+.icon-remove_circle_outline:before {
+  content: "\e90e";
+}
+.icon-shopping_cart:before {
+  content: "\e90f";
+}
+.icon-thumb_down:before {
+  content: "\e910";
+}
+.icon-thumb_up:before {
+  content: "\e911";
+}
 .icon-add_circle:before {
   content: "\e900";
 }
@@ -129,21 +147,57 @@ body {
 .icon-close:before {
   content: "\e903";
 }
-.icon-favorite:before {
-  content: "\e904";
-}
-.icon-keyboard_arrow_right:before {
-  content: "\e905";
-}
-.icon-remove_circle_outline:before {
+.icon-home3:before {
   content: "\e906";
 }
-.icon-shopping_cart:before {
-  content: "\e907";
+.icon-library:before {
+  content: "\e921";
 }
-.icon-thumb_down:before {
-  content: "\e908";
+.icon-file-text2:before {
+  content: "\e926";
 }
-.icon-thumb_up:before {
-  content: "\e909";
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-credit-card:before {
+  content: "\e93f";
+}
+.icon-location2:before {
+  content: "\e948";
+}
+.icon-bell:before {
+  content: "\e951";
+}
+.icon-mobile2:before {
+  content: "\e959";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-user-check:before {
+  content: "\e975";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-cog:before {
+  content: "\e994";
+}
+.icon-gift:before {
+  content: "\e99f";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+.icon-cool:before {
+  content: "\e9eb";
+}
+.icon-youtube2:before {
+  content: "\ea9e";
+}
+.icon-codepen:before {
+  content: "\eae8";
 }

@@ -128,7 +128,7 @@
 	}
 </script>
 <style lang="scss">
-	.wg_goods{display: flex;position:absolute;top:168px;bottom:46px;width:100%;overflow: hidden;
+	.wg_goods{display: flex;position:absolute;top:168px;bottom:76px;width:100%;overflow: hidden;
 		.menu_wrapper{flex:0 0 80px;width:80px;background-color: #f3f5f7;
 			.menu_item{display: table;width:56px;height:54px;line-height: 14px;padding: 0 12px;
 				&.current{position:relative;z-index: 10;margin-top:-1px;background-color: #fff;font-weight: 700;

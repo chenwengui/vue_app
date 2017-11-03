@@ -86,7 +86,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.goodrating{
+	.goodrating{width: 100%;;
 		.rating_type{margin:0 18px;padding:18px 0;border-bottom:1px solid rgba(7,17,27,.1);font-size:0;
 			span{display: inline-block;padding:8px 12px;margin-right:8px;font-size:16px;color:rgb(77,85,93);border-radius:4px;
 				i{font-size:12px;font-style: normal;padding-left:4px;}
@@ -111,7 +111,7 @@
 						.avatar{border-radius:50%;}
 					}
 					.time{margin-bottom: 6px;line-height:12px;font-size: 10px;color:rgb(147,153,159);}
-					.text{line-height: 16px;height:12px;color:rgb(7,17,27);
+					.text{line-height: 16px;color:rgb(7,17,27);font-size: 14px;
 						i{margin-right:4px;line-height: 16px;font-size: 12px;
 							&.icon-thumb_down{color:rgb(147,153,159);}
 							&.icon-thumb_up{color:rgb(0,160,220);}
