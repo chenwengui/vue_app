@@ -1,4 +1,16 @@
 {
+	"ownerlist":[
+		{"img":"p1.jpg","name":"糖与故事","star":4.1,"sellcount":2185,"minPrice":20,"cellMoney":3,"sellMinutes":48},
+		{"img":"p2.jpg","name":"贡茶(犀牛角店)","star":4.8,"sellcount":34,"minPrice":15,"cellMoney":2,"sellMinutes":38},
+		{"img":"p3.jpg","name":"贡茶(长湴店)","star":4.5,"sellcount":1255,"minPrice":18,"cellMoney":0,"sellMinutes":29},
+		{"img":"p4.jpg","name":"美味烧腊快餐店","star":4.6,"sellcount":1008,"minPrice":20,"cellMoney":4,"sellMinutes":32},
+		{"img":"p5.jpg","name":"reyaltea皇茶","star":4.6,"sellcount":976,"minPrice":18,"cellMoney":0,"sellMinutes":38},
+		{"img":"p6.jpg","name":"贡茶小吃(同和地铁站店)","star":4.6,"sellcount":1315,"minPrice":20,"cellMoney":4,"sellMinutes":40},
+		{"img":"p7.jpg","name":"阿里山贡茶","star":4.5,"sellcount":2555,"minPrice":0,"cellMoney":0,"sellMinutes":56},
+		{"img":"p8.jpg","name":"有点方小吃店","star":5.0,"sellcount":106,"minPrice":15,"cellMoney":4,"sellMinutes":30},
+		{"img":"p9.jpg","name":"德州汉堡(京溪店)","star":4.5,"sellcount":2945,"minPrice":20,"cellMoney":3,"sellMinutes":41},
+		{"img":"p10.jpg","name":"周黑鸭(广州京溪店)","star":4.8,"sellcount":213,"minPrice":20,"cellMoney":5,"sellMinutes":24}
+	],
 	"my":{
 		"title":"我的",
 		"user":{
@@ -26,7 +38,7 @@
 		},{
 			"iconClass":"icon-credit-card",
 			"iconColor":"#4CA5F5",
-			"name":"皮皮虾联名卡",
+			"name":"饱了没联名卡",
 			"desc":"免费领超级会员"
 		}]
 	},
@@ -112,22 +124,22 @@
   },
 
   "seller": {
-    "name": "皮皮虾香坊（智慧园）",
-    "description": "蜂鸟专送",
-    "deliveryTime": 38,
-    "score": 4.2,
-    "serviceScore": 4.1,
-    "foodScore": 4.3,
-    "rankRate": 69.2,
+    "name": "糖与故事",
+    "description": "蜂鸟快送",
+    "deliveryTime": 48,
+    "score": 4.1,
+    "serviceScore": 4.4,
+    "foodScore": 4.5,
+    "rankRate": 67.2,
     "minPrice": 20,
-    "deliveryPrice": 4,
-    "ratingCount": 24,
-    "sellCount": 90,
-    "bulletin": "皮皮虾香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。",
+    "deliveryPrice": 3,
+    "ratingCount": 34,
+    "sellCount": 2185,
+    "bulletin": "糖与故事其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。",
     "supports": [
       {
         "type": 0,
-        "description": "在线支付满28减5"
+        "description": "在线支付满28减15,满40减25"
       },
       {
         "type": 1,
@@ -166,7 +178,7 @@
       "type": -1,
       "foods": [
         {
-          "name": "皮蛋瘦肉粥",
+          "name": "热:皮蛋瘦肉粥",
           "price": 10,
           "oldPrice": "",
           "description": "咸粥",
@@ -200,7 +212,7 @@
           "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "扁豆焖面",
+          "name": "热:扁豆焖面",
           "price": 14,
           "oldPrice": "18",
           "description": "",
@@ -234,7 +246,7 @@
           "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "葱花饼",
+          "name": "热:葱花饼",
           "price": 10,
           "oldPrice": "",
           "description": "",
@@ -268,7 +280,7 @@
           "image": "http://fuss10.elemecdn.com/f/28/a51e7b18751bcdf871648a23fd3b4jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "牛肉馅饼",
+          "name": "热:牛肉馅饼",
           "price": 14,
           "oldPrice": "",
           "description": "",
@@ -302,7 +314,7 @@
           "image": "http://fuss10.elemecdn.com/d/b9/bcab0e8ad97758e65ae5a62b2664ejpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "招牌猪肉白菜锅贴/10个",
+          "name": "热:招牌猪肉白菜锅贴/10个",
           "price": 17,
           "oldPrice": "",
           "description": "",
@@ -336,7 +348,7 @@
           "image": "http://fuss10.elemecdn.com/7/72/9a580c1462ca1e4d3c07e112bc035jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "南瓜粥",
+          "name": "热:南瓜粥",
           "price": 9,
           "oldPrice": "",
           "description": "甜粥",
@@ -369,7 +381,7 @@
           "image": "http://fuss10.elemecdn.com/8/a6/453f65f16b1391942af11511b7a90jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "红豆薏米美肤粥",
+          "name": "热:红豆薏米美肤粥",
           "price": 12,
           "oldPrice": "",
           "description": "甜粥",
@@ -403,7 +415,7 @@
           "image": "http://fuss10.elemecdn.com/d/22/260bd78ee6ac6051136c5447fe307jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "八宝酱菜",
+          "name": "热:八宝酱菜",
           "price": 4,
           "oldPrice": "",
           "description": "",
@@ -437,7 +449,7 @@
           "image": "http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "红枣山药糙米粥",
+          "name": "热:红枣山药糙米粥",
           "price": 10,
           "oldPrice": "",
           "description": "",
@@ -471,7 +483,7 @@
           "image": "http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "糊塌子",
+          "name": "热:糊塌子",
           "price": 10,
           "oldPrice": "",
           "description": "",

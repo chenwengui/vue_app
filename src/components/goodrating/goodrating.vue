@@ -90,7 +90,7 @@
 		.rating_type{margin:0 18px;padding:18px 0;border-bottom:1px solid rgba(7,17,27,.1);font-size:0;
 			span{display: inline-block;padding:8px 12px;margin-right:8px;font-size:16px;color:rgb(77,85,93);border-radius:4px;
 				i{font-size:12px;font-style: normal;padding-left:4px;}
-				&.all{background-color: #7FBC82;}
+				&.all{background-color: #A1D0D2;}
 				&.positive{background-color: #CCECF8;}
 				&.negative{background-color: #E9EBEC;}
 				&.active{background-color: #00A0DC;color:#fff;}

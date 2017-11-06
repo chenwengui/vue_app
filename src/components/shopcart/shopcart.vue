@@ -12,7 +12,7 @@
 				<div class="desc">另需配送费￥{{deliveryPrice}}元</div>
 			</div>
 			<div class="content_right">
-				<div class="pay" :class="{'topay':this.totalPrice >= this.minPrice}">{{payDesc}}</div>
+				<div class="pay" :class="{'topay':this.totalPrice > 0 && this.totalPrice >= this.minPrice}" v-html="payDesc"></div>
 			</div>
 		</div>
 		<div class="shopcart_list" v-show="listShow">
@@ -36,6 +36,7 @@
 <script>
 	import cartcontrol from '../cartcontrol/cartcontrol.vue';
 	import BScroll from 'better-scroll';
+	import storageObj from '../../utils/storage.js';
 	export default{
 		props:{
 			minPrice:{type:Number,default:0},
@@ -65,7 +66,7 @@
 					let more = this.minPrice - this.totalPrice;
 					return `还差${more}元起送`;
 				}else{
-					return '去结算';
+					return '<a href="#/topayorder" style="color:#fff;font-size:14px;font-weight:700;">去结算</a>';
 				}
 			},
 			listShow(){
@@ -102,13 +103,14 @@
 						food.count = 0;
 					}
 				});
+				storageObj.removeSstorage('cartfoods');
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.shopcart{position:fixed;left:0;bottom:30px;z-index: 99;width:100%;height:48px;
+	.shopcart{position:fixed;left:0;bottom:0;z-index: 99;width:100%;height:48px;
 		.content{display: flex;background-color: #141d27;height:48px;}
 		.content_left{flex:1;font-size:0;
 			.logowrapper{display: inline-block;position: relative;top:-10px;margin:0 12px;padding:6px;box-sizing:border-box;width:56px;height:56px;border-radius:50%;background-color: #141d27;vertical-align: top;
@@ -128,7 +130,7 @@
 		}
 		.content_right{flex:0 0 105px;width:105px;
 			.pay{height:48px;line-height: 48px;text-align: center;font-size:14px;font-weight:700;background-color: #2b333b;color:rgba(255,255,255,.5);
-				&.topay{background-color: #047F3A;color:#fff;}
+				&.topay{background-color: #047F3A;}
 			}
 		}
 		.shopcart_list{position:absolute;top:0;left:0;transform: translateY(-100%);width:100%;z-index: -1;

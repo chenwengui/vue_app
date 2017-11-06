@@ -50,15 +50,32 @@
 		},
 		mounted(){
 			var self = this;
-			axios.get('/api/data.json').then(function(response){
-				if(response.statusText === RES_OK){
-					self.ratings = response.data.ratings;
-					console.log(self.ratings);
-					self.$nextTick(() => {
-						self.goodrating = new BScroll(self.$refs.goodrating, {click:true});
-					});
-				}
-			})
+			if(sessionStorage.getItem("wg_app_ppx__ratings") === null){
+				axios.get('/api/data.json').then(function(response){
+					if(response.statusText === RES_OK){
+						self.ratings = response.data.ratings;
+						sessionStorage.setItem("wg_app_ppx__ratings",JSON.stringify(self.ratings));
+						console.log("goods",self.ratings);
+						self.$nextTick(() => {  
+				           self.goodrating = new BScroll(self.$refs.goodrating, {click:true});
+				        })
+					}
+				});
+			}else{
+				self.ratings = JSON.parse(sessionStorage.getItem("wg_app_ppx__ratings"));
+				self.$nextTick(() => {  
+		           self.goodrating = new BScroll(self.$refs.goodrating, {click:true});
+		        })
+			}
+//			axios.get('/api/data.json').then(function(response){
+//				if(response.statusText === RES_OK){
+//					self.ratings = response.data.ratings;
+////					console.log(self.ratings);
+//					self.$nextTick(() => {
+//						self.goodrating = new BScroll(self.$refs.goodrating, {click:true});
+//					});
+//				}
+//			})
 		},
 		components:{
 			star,
@@ -70,7 +87,8 @@
 </script>
 
 <style lang="scss" scoped>
-	.wg_reviews{display:flex;position:absolute;top:168px;bottom:30px;left:0;width:100%;overflow: hidden;
+	.wg_reviews{display:flex;position:absolute;top:168px;bottom:0;left:0;width:100%;overflow: hidden;
+		.reviews_cont{width:100%;}
 		.reviews_head{display: flex;padding:18px 0;
 			.reviews_head_left{flex: 0 0 137px;width:137px;text-align: center;padding:6px 0;border-right:1px solid rgba(7,17,27,.1);
 				.score{margin-bottom: 6px;line-height: 28px;font-size: 20px;color:rgb(255,153,0);font-weight: 700;}

@@ -28,12 +28,15 @@
 				<div class="more">查看更多<span>&gt;</span></div>
 			</div>
 		</div>
+		<wg_footer></wg_footer>
 	</div>
 </template>
 
 <script>
 	import axios from 'axios';
+	import storageObj from '../../utils/storage.js';
 	import splitgap from '../splitgap/splitgap.vue';
+	import wg_footer from '../common/footer/footer.vue';
 	const RES_OK = 'OK';
 	export default{
 		data(){
@@ -43,22 +46,29 @@
 		},
 		created(){
 			let self = this;
-			axios.get('/api/data.json').then(function(response){
-				if(response.statusText === RES_OK){
-					self.discovery = response.data.discovery;
-					console.log(self.discovery);
-				}
-			});
+			if(storageObj.getSstorage("discovery") == null){
+				axios.get('/api/data.json').then(function(response){
+					if(response.statusText === RES_OK){
+						self.discovery = response.data.discovery;
+						storageObj.setSstorage("discovery",self.discovery);
+//						console.log(self.discovery);
+					}
+				});
+			}else{
+				self.discovery = storageObj.getSstorage("discovery");
+			}
+			
 		},
 		components:{
-			splitgap
+			splitgap,
+			wg_footer
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.wg_discovery{position: absolute;top:0;bottom:30px;left:0;width:100%;
-		.discovery_title{position:fixed;top:0;left:0;width:100%;font-weight: bold;letter-spacing: 4px;height:40px;line-height: 40px;text-align: center;color:#fff;font-size:20px;background-color: #141D27;}
+	.wg_discovery{position: absolute;top:0;bottom:50px;left:0;width:100%;
+		.discovery_title{position:fixed;z-index:9999;top:0;left:0;width:100%;font-weight: bold;letter-spacing: 4px;height:40px;line-height: 40px;text-align: center;color:#fff;font-size:20px;background-color: #141D27;}
 		.discovery_cont{margin-top:40px;
 			.cont_box{padding:18px 4px 18px 14px;
 				.title{text-align: center;font-size: 16px;margin-bottom: 12px;
@@ -66,7 +76,7 @@
 					strong{letter-spacing: 2px;font-weight: bold;}
 				}
 				.desc{font-size: 12px;line-height: 12px;text-align: center;color:#9F9F9F;}
-				.food_list{padding:18px 0;font-size:0;
+				.food_list{padding-top:18px;font-size:0;
 					.food_item{display:inline-block;margin-bottom:8px;width:33%;box-sizing:border-box;padding-right:6px;
 						img{width:100%;height:100%;}
 						.name{line-height: 24px;font-size:12px;color:#545454;}
@@ -76,7 +86,7 @@
 						}
 					}
 				}
-				.more{text-align: center;font-size: 14px;color:#BBBBBB;
+				.more{text-align: center;font-size: 14px;color:#BBBBBB;padding-top:8px;
 					span{margin-left:4px;}
 				}
 			}

@@ -15,11 +15,14 @@
 			</ul>
 			<div class="do_text">没有更多了</div>
 		</div>
+		<wg_footer></wg_footer>
 	</div>
 </template>
 
 <script>
 	import axios from 'axios';
+	import storageObj from '../../utils/storage.js';
+	import wg_footer from '../common/footer/footer.vue';
 	const RES_OK = 'OK';
 	export default{
 		data(){
@@ -29,19 +32,27 @@
 		},
 		created(){
 			let self = this;
-			axios.get('/api/data.json').then(function(response){
-				if(response.statusText === RES_OK){
-					self.orders = response.data.orders;
-					console.log(self.orders);
-				}
-			});
+			if(storageObj.getSstorage("orders") == null){
+				axios.get('/api/data.json').then(function(response){
+					if(response.statusText === RES_OK){
+						self.orders = response.data.orders;
+						storageObj.setSstorage("orders",self.orders);
+					}
+				});
+			}else{
+				self.orders = storageObj.getSstorage("orders");
+			}
+			
+		},
+		components:{
+			wg_footer
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.wg_orders{
-		.orders_title{position:fixed;top:0;left:0;width:100%;font-weight: bold;letter-spacing: 4px;height:40px;line-height: 40px;text-align: center;color:#fff;font-size:20px;background-color: #141D27;}
+	.wg_orders{position: absolute;top:0;bottom:50px;left:0;width:100%;
+		.orders_title{position:fixed;z-index:9999;top:0;left:0;width:100%;font-weight: bold;letter-spacing: 4px;height:40px;line-height: 40px;text-align: center;color:#fff;font-size:20px;background-color: #141D27;}
 		.orders_cont{padding:18px 14px;margin-top:40px;
 			>h2.title{font-size: 16px;display:inline-block;padding:0 2px;font-weight: bold;padding-bottom:4px;border-bottom:2px solid #3C92D3;}
 			.orders_list{padding-top:6px;

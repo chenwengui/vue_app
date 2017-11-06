@@ -3,13 +3,13 @@
    	<wg_header :owner="owner"></wg_header>
    	<div class="wg_tab">
    		<div class="tab_item">
-   			<router-link to="/goods">商品</router-link>
+   			<router-link to="/home/goods">商品</router-link>
    		</div>
    		<div class="tab_item">
-   			<router-link to="/reviews">评价</router-link>
+   			<router-link to="/home/reviews">评价</router-link>
    		</div>
    		<div class="tab_item">
-   			<router-link to="/owner">商家</router-link>
+   			<router-link to="/home/owner">商家</router-link>
    		</div>
    	</div>
    	<router-view :owner="owner"></router-view>
@@ -34,7 +34,8 @@
 			axios.get('/api/data.json').then(function(response){
 				if(response.statusText === RES_OK){
 					self.owner = response.data.seller;
-					self.$router.push('/goods');
+//					console.log('owner',self.owner);  只一次；路径/;因该组件不会销毁，也就不会重新生成之类
+					self.$router.push('/home/goods');
 				}
 			});
 		}

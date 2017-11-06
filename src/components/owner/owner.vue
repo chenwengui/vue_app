@@ -121,7 +121,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.wg_owner{position:absolute;top:168px;bottom:30px;left:0;width:100%;overflow: hidden;
+	.wg_owner{position:absolute;top:168px;bottom:0;left:0;width:100%;overflow: hidden;
 		.overview{padding:18px;
 			.title{margin-bottom:8px;line-height:16px;font-size:16px;color:rgb(7,17,27);font-weight:bold;letter-spacing: 2px;}
 			.desc{padding-bottom:18px;border-bottom:1px solid rgba(7,17,27,.1);line-height: 18px;font-size:0;

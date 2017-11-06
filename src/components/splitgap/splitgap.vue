@@ -1,9 +1,16 @@
 <template>
-	<div class="splitgap"></div>
+	<div class="splitgap" :style="{height:gapHeight+'px'}"></div>
 </template>
 
 <script>
-	export default{}
+	export default{
+		props:{
+			gapHeight:{
+				type:String,
+				default:'16'
+			}
+		}
+	}
 </script>
 
 <style lang="scss" scoped>

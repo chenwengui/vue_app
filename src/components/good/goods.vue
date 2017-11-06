@@ -42,6 +42,9 @@
 	import cartcontrol from '../cartcontrol/cartcontrol.vue';
 	import BScroll from 'better-scroll';
 	import axios from 'axios';
+	import storageObj from '../../utils/storage.js';
+	import Vue from 'vue';
+	
 	const RES_OK = 'OK'; 
 	export default{
 		props:{
@@ -73,21 +76,46 @@
 						}
 					});
 				});
+				//缓存购物车商品
+				if(foods.length !== 0){storageObj.setSstorage("cartfoods",foods);}
 				return foods;
 			}
 		},
 		created(){
+			//缓存请求数据
 			var self = this;
-			axios.get('/api/data.json').then(function(response){
-				if(response.statusText === RES_OK){
-					self.goods = response.data.goods;
-					console.log(self.goods);
-					self.$nextTick(() => {  
-			            self._initScroll();
-			            self._calcHeight();
-			        })
-				}
-			})
+			if(sessionStorage.getItem("wg_app_ppx__goods") === null){
+				axios.get('/api/data.json').then(function(response){
+					if(response.statusText === RES_OK){
+						self.goods = response.data.goods;
+						sessionStorage.setItem("wg_app_ppx__goods",JSON.stringify(self.goods));
+//						console.log("goods",self.goods);
+						self.$nextTick(() => {  
+				            self._initScroll();
+				            self._calcHeight();
+				        })
+					}
+				});
+			}else{
+				self.goods = JSON.parse(sessionStorage.getItem("wg_app_ppx__goods"));
+				self.$nextTick(() => {  
+		            self._initScroll();
+		            self._calcHeight();
+		        })
+			}
+			//获取缓存购物车商品
+			if(storageObj.getSstorage("cartfoods") != null){
+				let foods = storageObj.getSstorage("cartfoods");
+				self.goods.forEach((good) => {
+					good.foods.forEach((food) => {
+						foods.forEach((item) => {
+							if(food.name === item.name){
+								Vue.set(food,'count',item.count);
+							}
+						});
+					});
+				});	
+			}
 		},
 		methods:{
 			selectMenu(idx){
@@ -115,7 +143,7 @@
 				}
 			},
 			toFoodDetail(food){
-				console.log(food)
+//				console.log(food)
 				this.foodDetail = food;
 				this.$refs.tofoodd.showFoodD();
 			}
@@ -128,10 +156,10 @@
 	}
 </script>
 <style lang="scss">
-	.wg_goods{display: flex;position:absolute;top:168px;bottom:76px;width:100%;overflow: hidden;
+	.wg_goods{display: flex;position:absolute;top:168px;bottom:48px;width:100%;overflow: hidden;
 		.menu_wrapper{flex:0 0 80px;width:80px;background-color: #f3f5f7;
 			.menu_item{display: table;width:56px;height:54px;line-height: 14px;padding: 0 12px;
-				&.current{position:relative;z-index: 10;margin-top:-1px;background-color: #fff;font-weight: 700;
+				&.current{position:relative;z-index: 10;margin-top:-1px;background-color: #fff;border-left: 3px solid #3879D9;padding-left: 9px;font-weight: 700;
 					.text{border:none;}
 				}
 				.text{display: table-cell;vertical-align: middle;width:56px;font-size:12px;border-bottom:1px solid rgba(7,17,27,.1);}

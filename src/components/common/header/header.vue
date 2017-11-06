@@ -1,5 +1,6 @@
 <template>
 	<div class="wg_header">
+		<div class="iconback"><router-link to="/ownerlist"><i class="icon-arrow_lift"></i></router-link></div>
 		<div class="content-wrapper">
 			<div class="avatar">
 				<img :src="owner.avatar" width="64" height="64"/>
@@ -37,6 +38,9 @@
 
 <style lang="scss">
 	.wg_header{color:#fff;background-color: rgba(7,17,27,.5);position:relative;overflow:hidden;
+		.iconback{position:absolute;top:8px;left:-6px;
+			i{padding: 10px;color: #fff;font-size: 16px;}
+		}
 		.content-wrapper{padding:10px 12px 8px 24px;font-size:0;
 			.avatar{display: inline-block;}
 			.content{display: inline-block;margin-left:16px;font-size:14px;

@@ -83,7 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.gooddetail{position: fixed;z-index:9;top:0;left:0;bottom:48px;width:100%;background-color: #fff;
+	.gooddetail{position: fixed;z-index:9;top:0;left:0;bottom:68px;width:100%;background-color: #fff;
 		.food_content{
 			.img_header{position:relative;width:100%;height:0;padding-top:100%;
 				img{position:absolute;top:0;left:0;width:100%;height:100%;}
