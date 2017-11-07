@@ -75,12 +75,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new HtmlWebpackPlugin({
-	    filename: 'index.html',
-	    template: 'index.html',
-	    inject: true,
-	    favicon: './favicon.ico'
-	   })
+    })
   ])
 }
