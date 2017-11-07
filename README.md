@@ -4,13 +4,13 @@
 
 ## 项目运行:
 
-# 克隆到本地
+  克隆到本地
  git@github.com:chenwengui/vue_app.git
 
-# 安装项目依赖模块
+  安装项目依赖模块
  npm install
 
-# 开启本地服务器http://localhost:8080
+   开启本地服务器http://localhost:8080
   npm run dev
     打开后修改网址为http://localhost:8080/#/ownerlist
 
